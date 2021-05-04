@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                width: 100%;
+            }
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .container {
+                width: 50%;
+            }
+        }
+    </style>
+
+    <title>Formulário - Pesquisa de Satisfação</title>
+</head>
+
+<body>
+    <main>
+        <div class="container py-4" style="width: 70%;">
+            <header class="pb-3 mb-5 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img src="img/LogoUNICAPICAM.png" alt="UNICAP" width="150" height="60">
+                    <span class="fs-4 pl-4" style="color: maroon; padding-left: 30px;"><B>UNIVERSIDADE CATÓLICA DE PERNAMBUCO</B></span>
+                </a>
+            </header>
+
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-1">
+                    <h1 class="display-5 fw-bold">Pesquisa de Melhoria das Aulas Remotas</h1>
+                    <p class="col-md-12 fs-3">Obrigado por contribuir com esta pesquisa. Me conta dos seus anseios para sermos uma Universidade melhor. Essa pesquisa possui 3 passos. Sua sugestão será avaliada por nossa equipe formada pela Reitoria, Coordenadores e Representantes
+                        de Sala! Você pode enviar quantas sugestões desejar.</p>
+                </div>
+            </div>
+
+            <form class="p-4">
+                <legend class="pb-4">Passo 1/3</legend>
+                <div class="form-group pb-3">
+                    <label for="InputNome">Nome:</label>
+                    <input type="text" class="form-control" id="InputNome" placeholder="Digite seu nome completo aqui">
+                </div>
+                <div class="form-group pb-4">
+                    <label for="TextareaComentario">Sua sugestão:</label>
+                    <textarea minlength="50" class="form-control" id="TextareaComentario" rows="3" placeholder="Digite sua sugestão aqui" aria-describedby="comentario"></textarea>
+                    <div id="comentario" class="form-text">
+                        Sua sugestão deverá ter no mínimo 50 caracteres.
+                    </div>
+                </div>
+                <a href="passo2.html" class="btn btn-outline-secondary btn-sm mb-5" type="button" id="btContinuar">Continuar link</a>
+            </form>
+
+            <script>
+                var nome = document.getElementById('InputNome');
+                var comentario = document.getElementById("TextareaComentario");
+
+                document.getElementById('btContinuar').addEventListener('click', function() {
+                    localStorage.setItem("Nome", nome.value);
+                    localStorage.setItem("Comentario", comentario.value);
+                    window.history.go(1);
+                });
+            </script>
+
+        </div>
+    </main>
+</body>
+<footer class="pt-3 mt-5 text-muted border-top">
+    &copy; 2021 - David Marcos de Albuquerque Costa
+</footer>
+
+</html>
